@@ -11,6 +11,12 @@ const StyledMapContainer = styled(MapContainer)`
   -webkit-box-shadow: 10px 12px 43px -21px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 12px 43px -21px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 12px 43px -21px rgba(0, 0, 0, 0.75);
+
+  @media screen and (max-width: 400px) {
+    margin-top: 20px;
+    width: 100%;
+    height: 50vh;
+  }
 `;
 
 const ChangeView = ({ center, zoom }) => {
@@ -45,8 +51,8 @@ const Map = ({ putCenter }) => {
 
   return (
     <>
-      <StyledMapContainer center={center} zoom={15} scrollWheelZoom={false}>
-        <ChangeView center={center} zoom={15} />
+      <StyledMapContainer center={center} zoom={14} scrollWheelZoom={true}>
+        <ChangeView center={center} zoom={14} />
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <Polygon pathOptions={purpleOptions} positions={polygon} />
       </StyledMapContainer>

@@ -9,6 +9,11 @@ const AppWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 400px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const App = () => {
