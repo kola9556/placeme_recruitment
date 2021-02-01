@@ -28,14 +28,13 @@ const ChangeView = ({ center, zoom }) => {
 const Map = ({ putCenter }) => {
   const [polygon, setPolygon] = useState([]);
   const [center, setCenter] = useState([51.12, 20.12]);
-  const [first, setFirst] = useState(true);
 
   useEffect(() => {
     if (putCenter.length) {
-      setFirst(false);
       setCenter(putCenter);
     }
-    if (!first) {
+
+    if (center === putCenter) {
       axios
         .get(`https://devcube.placeme.pl/api/getGeoJSON?lat=${center[0]}&lng=${center[1]}`)
         .then(({ data }) => {
@@ -45,7 +44,7 @@ const Map = ({ putCenter }) => {
         })
         .catch((error) => alert(error));
     }
-  }, [center, first, putCenter]);
+  }, [center, putCenter]);
 
   const purpleOptions = { color: "purple" };
 

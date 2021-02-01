@@ -14,6 +14,6 @@ To run project U need to:
 
 4.  **Your site is now running at `http://localhost:3000`!**
 
-5.  **It's also running at `https://placemerecruitment.netlify.app/`!**
+5.  **It's also running at `https://placemerecriutment.netlify.app/`!**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
